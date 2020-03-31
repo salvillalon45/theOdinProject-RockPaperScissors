@@ -5,65 +5,28 @@
     <title>The Odin Project: Rock-Paper-Scissors</title>
   </head>
   <body>
-    <script>
 
-      function askUserInput() {
-        let playerSelection = prompt("Rock, Paper, or Scissor?");
-        playerSelection = playerSelection.toLowerCase();
-        return playerSelection;
-      }
-
-      function getRandomInt() {
-        return Math.floor(Math.random() * Math.floor(3));
-      }
-
-      function getComputerInput() {
-        let options = ["rock", "paper", "scissors"];
-        let randomIndex = getRandomInt();
-        let computerSelection = options[randomIndex];
-        return computerSelection;
-      }
-
-      function playRound() {
-        let playerSelection = askUserInput();
-        let computerSelection = getComputerInput();
-        console.log("what is playerSelection:: ", playerSelection);
-        console.log("what is computerSelection:: ", computerSelection);
-
-        if (playerSelection === "rock" && computerSelection === "scissors") {
-          return "You Win! :)";
-        }
-        else if (playerSelection === "scissors" && computerSelection === "paper") {
-          return "You Win! :)";
-        }
-        else if (playerSelection === "paper" && computerSelection === "rock") {
-          return "You Win! :)";
-        }
-        else if (computerSelection === "rock" && playerSelection === "scissors") {
-          return "Computer Win! >:(";
-        }
-        else if (computerSelection === "scissors" && playerSelection === "paper") {
-          return "Computer Win! >:(";
-        }
-        else if (computerSelection === "paper" && playerSelection === "rock") {
-          return "Computer Win! >:(";
-        }
-        else {
-          return "Keep Playing";
-        }
-      }
-
-      function game() {
-        for (let i = 0; i < 5; i++) {
-          console.log("");
-          console.log("-----------------------------------");
-          console.log(playRound());
-          console.log("-----------------------------------");
-        }
-      }
-
-    </script>
     <h1> The Odin Project: Rock-Paper-Scissors made by Salvador Villalon </h1>
+
+    <div class="container">
+      <button class="select-rock" id="rock" type="button">Select Rock</button>
+      <button class="select-paper" id="paper" type="button">Select Paper</button>
+      <button class="select-scissors" id="scissors" type="button">Select Scissors</button>
+    </div>
+
+    <h2>Stats of Game</h2>
+    <div class="stats-container" id="stats-container">
+      <!-- Insert player choice and computer choice here -->
+    </div>
+
+    <h2>Results</h2>
+    <h3>If one player reaches 5 points first, they will win!</h3>
+    <div class="result-container" id="result-container">
+      <!-- Insert result of game here -->
+    </div>
+
+    <script src="./logic/logic.js"></script>
+
 
   </body>
 </html>
